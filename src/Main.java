@@ -1,3 +1,5 @@
+import java.util.SortedMap;
+
 public class Main {
     public static void main(String[] args) {
         //С помощью цикла while посчитайте, сколько месяцев потребуется, чтобы накопить 2 459 000 рублей при условии,
@@ -95,6 +97,20 @@ public class Main {
         for (int day = firstFriday; day <= 31; day += 7) {
             System.out.println("Сегодня пятница, " + day + " -е число. Необходимо подготовить отчет");
 
+        }
+
+        //Нам нужно написать астрономическое приложение, которое считает, когда над Землей пролетает комета.
+        //Известно, что комета пролетает каждый 79-й год, начиная с нулевого.
+        //В консоль нужно вывести все годы за последние 200 лет, когда появлялась комета, а также следующий год ее появления (ближайшие 100 лет).
+        System.out.println("Задача 8");
+        int period = 79;
+        int startSeeing = 0;
+        int start = currentYear - 200;
+        int end = currentYear + 100;
+        for (int year = startSeeing; year < end; year+= period) {
+            if (year > start) {
+                System.out.println(year);
+            }
         }
 
     }
