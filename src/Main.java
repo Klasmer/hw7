@@ -5,14 +5,14 @@ public class Main {
         //С помощью цикла while посчитайте, сколько месяцев потребуется, чтобы накопить 2 459 000 рублей при условии,
         // что первоначально мы имеем 0 рублей и готовы откладывать по 15 тысяч рублей.
         System.out.println("Задача 1");
-        int total = 0;
-        int savingsPerMonth = 15_000;
+        int sum = 0;
+        int amount = 15_000;
         int month = 0;
-        int bank = 2_459_000;
-        while (total < bank) {
-            total = total + savingsPerMonth;
+        int desiredSum = 2_459_000;
+        while (sum < desiredSum) {
+            sum = sum + amount;
             month++;
-            System.out.println("Месяц " + month + " сумма накоплений = " + total + " рублей");
+            System.out.println("Месяц " + month + " сумма накоплений = " + sum + " рублей");
         }
 
         //Выведите в одну строку через пробел числа от 1 до 10 с помощью цикла while.
@@ -32,43 +32,40 @@ public class Main {
         //Рождаемость составляет 17 человек на 1000, смертность — 8 человек. Рассчитайте, какая численность
         //населения будет через 10 лет, если показатели рождаемости и смертности постоянны.
         System.out.println("Задача 3");
-        int totalPeople = 12_000_000;
-        int death = 8;
-        int birthRate = 17;
+        int population = 12_000_000;
+        int mortalityPerThousand = 8;
+        int fertilityPerThousand = 17;
         int currentYear = 2024;
         for (int year = currentYear; year < currentYear + 10; year++) {
-            totalPeople += totalPeople * birthRate / 1000 - totalPeople * death / 1000;
-            System.out.println("Год " + year + " , численность населения составляет " + totalPeople);
+            population += population * fertilityPerThousand / 1000 - population * mortalityPerThousand / 1000;
+            System.out.println("Год " + year + " , численность населения составляет " + population);
         }
 
         //Василий решил положить деньги на накопительный счет, где каждый месяц к сумме его вклада добавляется еще 7%.
         //Первоначальная сумма вклада — 15 тысяч рублей.
         //Вычислите и выведите в консоль, сколько месяцев Василию нужно будет копить, чтобы
         //собрать сумму в 12 миллионов рублей при условии, что процент банка от накоплений
-        //собрать сумму в 12 миллионов рублей при условии, что процент банка от накоплений
         System.out.println("Задача 4");
-        int summ = 12_000_000;
-        int contribution = 15_000;
+        sum = amount;
+        desiredSum = 12_000_000;
         double percent = 7D / 100;
         month = 0;
-        while (contribution < summ) {
-            contribution = (int) (contribution * (1 + percent));
+        while (sum < desiredSum) {
+            sum = (int) (sum * (1 + percent));
             month++;
-            System.out.println("Месяц " + month + " сумма накоплений = " + contribution + " рублей");
+            System.out.println("Месяц " + month + " сумма накоплений = " + sum + " рублей");
         }
 
         //Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы
         //подряд, а только каждый шестой. Должны быть видны накопления за 6-й, 12-й, 18-й, 24-й и следующие месяцы.
         System.out.println("Задача 5");
-        int summ1 = 12_000_000;
-        int contribution1 = 15_000;
-        double percent1 = 7D / 100;
+        sum = amount;
         month = 0;
-        while (contribution1 < summ1) {
-            contribution1 = (int) (contribution1 * (1 + percent1));
+        while (sum < desiredSum) {
+            sum = (int) (sum * (1 + percent));
             month++;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений = " + contribution1 + " рублей");
+                System.out.println("Месяц " + month + " сумма накоплений = " + sum + " рублей");
             }
 
         }
@@ -77,15 +74,14 @@ public class Main {
         //сумма его накоплений каждые полгода на протяжении этих 9 лет.
         //Исходная сумма всё та же — 15 тысяч рублей, проценты банка — 7% ежемесячно.
         System.out.println("Задача 6");
-        int contribution2 = 15_000;
-        double percent2 = 7D / 100;
+        sum = amount;
         int months = 12 * 9;
         month = 0;
         while (month < months) {
-            contribution2 = (int) (contribution2 * (1 + percent2));
+            sum = (int) (sum * (1 + percent));
             month++;
             if (month % 6 == 0) {
-                System.out.println("Месяц " + month + " сумма накоплений = " + contribution2 + " рублей");
+                System.out.println("Месяц " + month + " сумма накоплений = " + sum + " рублей");
             }
         }
 
@@ -107,7 +103,7 @@ public class Main {
         int startSeeing = 0;
         int start = currentYear - 200;
         int end = currentYear + 100;
-        for (int year = startSeeing; year < end; year+= period) {
+        for (int year = startSeeing; year < end; year += period) {
             if (year > start) {
                 System.out.println(year);
             }
