@@ -70,5 +70,21 @@ public class Main {
             }
 
         }
+
+        //Василий решил, что будет копить деньги ближайшие 9 лет. Он хочет знать, какой будет
+        //сумма его накоплений каждые полгода на протяжении этих 9 лет.
+        //Исходная сумма всё та же — 15 тысяч рублей, проценты банка — 7% ежемесячно.
+        System.out.println("Задача 6");
+        int contribution2 = 15_000;
+        double percent2 = 7D / 100;
+        int months = 12 * 9;
+        month = 0;
+        while (month < months) {
+            contribution2 = (int) (contribution2 * (1 + percent2));
+            month++;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + " сумма накоплений = " + contribution2 + " рублей");
+            }
+        }
     }
 }
