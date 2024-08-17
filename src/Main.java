@@ -55,6 +55,20 @@ public class Main {
             System.out.println("Месяц " + month + " сумма накоплений = " + contribution + " рублей");
         }
 
+        //Видоизмените программу таким образом, чтобы в консоль выводились не все месяцы
+        //подряд, а только каждый шестой. Должны быть видны накопления за 6-й, 12-й, 18-й, 24-й и следующие месяцы.
+        System.out.println("Задача 5");
+        int summ1 = 12_000_000;
+        int contribution1 = 15_000;
+        double percent1 = 7D / 100;
+        month = 0;
+        while (contribution1 < summ1) {
+            contribution1 = (int) (contribution1 * (1 + percent1));
+            month++;
+            if (month % 6 == 0) {
+                System.out.println("Месяц " + month + " сумма накоплений = " + contribution1 + " рублей");
+            }
 
+        }
     }
 }
