@@ -22,9 +22,24 @@ public class Main {
             System.out.print(" " + i);
         }
         System.out.println(" ");
-        for ( i = 10; i >= 1; i = i - 1) {
+        for (i = 10; i >= 1; i = i - 1) {
             System.out.print(" " + i);
         }
+
+        //В стране Y население — 12 миллионов человек.
+        //Рождаемость составляет 17 человек на 1000, смертность — 8 человек. Рассчитайте, какая численность
+        //населения будет через 10 лет, если показатели рождаемости и смертности постоянны.
+        System.out.println("Задача 3");
+        int totalPeople = 12_000_000;
+        int death = 8;
+        int birthRate = 17;
+        int currentYear = 2024;
+        for (int year = currentYear; year < currentYear + 10; year++ ) {
+            totalPeople += totalPeople * birthRate / 1000 - totalPeople * death / 1000;
+            System.out.println("Год " + year + " , численность населения составляет " + totalPeople);
+        }
+
+
 
     }
 }
