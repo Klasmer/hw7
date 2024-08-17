@@ -34,11 +34,26 @@ public class Main {
         int death = 8;
         int birthRate = 17;
         int currentYear = 2024;
-        for (int year = currentYear; year < currentYear + 10; year++ ) {
+        for (int year = currentYear; year < currentYear + 10; year++) {
             totalPeople += totalPeople * birthRate / 1000 - totalPeople * death / 1000;
             System.out.println("Год " + year + " , численность населения составляет " + totalPeople);
         }
 
+        //Василий решил положить деньги на накопительный счет, где каждый месяц к сумме его вклада добавляется еще 7%.
+        //Первоначальная сумма вклада — 15 тысяч рублей.
+        //Вычислите и выведите в консоль, сколько месяцев Василию нужно будет копить, чтобы
+        //собрать сумму в 12 миллионов рублей при условии, что процент банка от накоплений
+        //собрать сумму в 12 миллионов рублей при условии, что процент банка от накоплений
+        System.out.println("Задача 4");
+        int summ = 12_000_000;
+        int contribution = 15_000;
+        double percent = 7D / 100;
+        month = 0;
+        while (contribution < summ) {
+            contribution = (int) (contribution * (1 + percent));
+            month++;
+            System.out.println("Месяц " + month + " сумма накоплений = " + contribution + " рублей");
+        }
 
 
     }
