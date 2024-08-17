@@ -13,5 +13,18 @@ public class Main {
             System.out.println("Месяц " + month + " сумма накоплений = " + total + " рублей");
         }
 
+        //Выведите в одну строку через пробел числа от 1 до 10 с помощью цикла while.
+        //На следующей строке выведите числа в обратном порядке от 10 до 1 с помощью цикла for.
+        System.out.println("Задача 2");
+        int i = 0;
+        while (i < 10) {
+            i++;
+            System.out.print(" " + i);
+        }
+        System.out.println(" ");
+        for ( i = 10; i >= 1; i = i - 1) {
+            System.out.print(" " + i);
+        }
+
     }
 }
